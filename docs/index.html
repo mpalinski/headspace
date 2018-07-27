@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Mindfulness and media</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+
+				<section>Text data collection</section>
+						<section>
+							Using Selenium: Java's browser automation framework we have webscraped text data from two sources:
+
+						(1)<b> Headspace blog</b>,
+							(2)<b> Access to insight - Readings in Theravada Buddhism</b>
+
+						</section>
+						<section>
+						<p>We have webscraped all <b>949</b> articles from the Headspace blog until the end of 2017.</p>
+
+						  <img data-src="no_articles.png", width="60%">
+							<!-- <h6><i>Source</i>: Own elaboration.</h6> -->
+							</section>
+<section>
+	<table class="tg">
+  <tr>
+    <th class="tg-us36">Main categories</th>
+    <th class="tg-us36">Number of articles<br></th>
+    <th class="tg-us36"><br></th>
+    <th class="tg-us36"></th>
+    <th class="tg-us36"></th>
+  </tr>
+  <tr>
+    <td class="tg-us36">Birth</td>
+    <td class="tg-us36">4</td>
+    <td class="tg-us36"><br></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36">Death</td>
+    <td class="tg-us36">38</td>
+    <td class="tg-us36"><br></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36">Health</td>
+    <td class="tg-us36">86</td>
+    <td class="tg-us36"><br></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Living</td>
+    <td class="tg-yw4l">247</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Meditation</td>
+    <td class="tg-yw4l">183</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Sport</td>
+    <td class="tg-yw4l">13</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Work</td>
+    <td class="tg-yw4l">15</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+</table>
+
+</section>
+
+<section>
+	From the Access to insight website we have retrieved all (online) available<b>1269</b> english translations of suttas constituting the Pali canon, additionally we have included commentary to The Satipatthana Sutta because of its importance to the analysis.
+
+</section>
+</section>
+
+<section>
+<section> Text-mining </br> </section>
+
+<section style="text-align: left;">
+<b>Keywords Frequency </b> </br>
+	<li>Analysis based on the frequency of appearances for all words in the text
+	<li>Frequency: number of appearances of every word divided by the number of articles/suttas
+</section>
+
+<section style="text-align: left;">
+<b>Co-occurrence analysis</b> </br>
+<li> Aim: Exploring the relationship between topics
+<li> Def.: Pairs of terms which are mentioned together in the articles/suttas
+<li> How: The number of texts containing both terms is divided by the number of texts including our previously identified keyword of interest
+<li> We present normalized results consisting of selected top 30 co-occurences
+
+</section>
+				<section>Co-occurrence analysis: Results sample
+    		<div class="fig-container"
+        data-fig-id="fig-mandala"
+        data-file="mandala.html">
+				</section>
+
+	<section>		Next steps: Topic modeling using (LDA and doc2vec)
+</section>
+
+	<section data-background-iframe="./lda.html">
+
+		 </section>
+</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'https://d3js.org/d3.v4.min.js' },
+					{ src: 'node_modules/reveald3/reveald3.js' },
+					{ src: 'plugin/d3js/d3js.js' }
+				],
+					transition: 'slide', // none/fade/slide/convex/concave/zoom
+			});
+		</script>
+	</body>
+</html>
